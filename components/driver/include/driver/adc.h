@@ -400,6 +400,11 @@ esp_err_t adc2_get_raw(adc2_channel_t channel, adc_bits_width_t width_bit, int* 
  */
 esp_err_t adc2_vref_to_gpio(gpio_num_t gpio);
 
+// Exposing some internal routines to allow
+// finer graied control of ADC sampling patterns
+esp_err_t adc_set_i2s_data_pattern(adc_unit_t adc_unit, int seq_num, adc_channel_t channel, adc_bits_width_t bits, adc_atten_t atten);
+esp_err_t adc_set_i2s_data_len(adc_unit_t adc_unit, int patt_len);
+
 #ifdef __cplusplus
 }
 #endif
