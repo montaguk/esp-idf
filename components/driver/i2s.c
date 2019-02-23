@@ -1180,7 +1180,7 @@ esp_err_t i2s_adc_enable(i2s_port_t i2s_num)
     I2S_CHECK((p_i2s_obj[i2s_num]->mode & I2S_MODE_ADC_BUILT_IN), "i2s built-in adc not enabled", ESP_ERR_INVALID_STATE);
 
     adc1_i2s_mode_acquire();
-    _i2s_adc_mode_recover();
+    //_i2s_adc_mode_recover();
     return i2s_set_clk(i2s_num, p_i2s_obj[i2s_num]->sample_rate, p_i2s_obj[i2s_num]->bits_per_sample, p_i2s_obj[i2s_num]->channel_num);
 }
 
